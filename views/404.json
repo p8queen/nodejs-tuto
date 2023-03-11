@@ -1,0 +1,9 @@
+{
+	"message":"Hello, from 404!",
+	"articleData":{
+	"articleName": "How to send JSON response from NodeJS",
+	"category":"NodeJS",
+	"status": "published"
+	},
+	"endingMessage":"Visit Localhost to learn more"
+}
