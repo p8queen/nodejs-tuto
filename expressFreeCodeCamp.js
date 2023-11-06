@@ -1,11 +1,25 @@
 let express = require('express');
 let app = express();
+let bodyParser = require('body-parser');
+
+//use bodyparser
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+//get data from post request
+app.post('/name', function(req, res) {
+  let firstname = req.body.first;
+  let lastname = req.body.last;
+  res.json({name: `${firstname} ${lastname}`});
+});
 
 app.get('/', (req, res) => {
   //res.send('Hello Express');
   const absolutePath = __dirname + '/views/index.html';
   res.sendFile(absolutePath);
 });
+
+
 
 // middleware to serve static file. 
 app.use('/public', express.static(__dirname + '/public'));
@@ -50,3 +64,4 @@ console.log("Hello World");
 
 
 module.exports = app;
+
